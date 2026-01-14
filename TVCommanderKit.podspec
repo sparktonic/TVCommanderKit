@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/sparktonic/TVCommanderKit'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Sparktonic' => 'dev@sparktonic.com' }
-  s.source           = { :git => 'https://github.com/sparktonic/TVCommanderKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/sparktonic/TVCommanderKit.git', :branch => 'main' }
 
   s.ios.deployment_target = '13.0'
   s.swift_version = '5.8'
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   # Source files
   s.source_files = 'Sources/TVCommanderKit/**/*.swift'
 
-  # Vendored framework (Samsung's SmartView SDK)
+  # Vendored framework (Samsung's SmartView SDK) - catalyst variant removed for CocoaPods compatibility
   s.vendored_frameworks = 'SmartView.xcframework'
 
   # Dependencies
@@ -28,7 +28,6 @@ Pod::Spec.new do |s|
 
   # Build settings
   s.pod_target_xcconfig = {
-    'DEFINES_MODULE' => 'YES',
-    'SWIFT_COMPILATION_MODE' => 'wholemodule'
+    'DEFINES_MODULE' => 'YES'
   }
 end
